@@ -1,0 +1,50 @@
+﻿@model MAAK.Models.AwardRecord
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AwardRecord</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AwardRecord_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AwardRecord_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Award.Award_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Award.Award_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Award.Award_Detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Award.Award_Detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member.Member_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member.Member_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AwardRecord_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("MAAK", "Index", "AssociationHistories", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">關於學會<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("學會沿革","Index", "AssociationHistories")</li>
+                            <li>@Html.ActionLink("學會大事跡","Index", "AssociationEvents")</li>
+                            <li>@Html.ActionLink("學會組織", "Index", "AssociationEvents")</li>
+                        </ul>
+                    </li>                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">會員簡介<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("會員簡介", "Index", "Members")</li>
+                            <li>@Html.ActionLink("會員職位", "Index", "MemberPosition")</li>
+                            <li>@Html.ActionLink("職位", "Index", "Positions")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">最新消息<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("最新活動消息", "Index", "LatestactivityNews")</li>
+                            <li>@Html.ActionLink("得獎事蹟", "Index", "Awards")</li>
+                            <li>@Html.ActionLink("獎項內容", "Index", "AwardsDetail")</li>
+                            <li>@Html.ActionLink("媒體報導", "Index", "MediaReports")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">展覽專區<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("展覽消息", "Index", "ExhibitionRecords")</li>
+                            <li>@Html.ActionLink("展覽成員", "Index", "ExhibitionRecords")</li>
+                            <li>@Html.ActionLink("展覽內容", "Index", "ExhibitionsDetail")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("作品集", "Index", "Artisticworks")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">會務專區<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("學會紀錄", "Index", "MeetingRecords")</li>
+                            <li>@Html.ActionLink("學會消息", "Index", "MeetingNew")</li>
+                            <li>@Html.ActionLink("學會規章", "Index", "AssociationRules")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("關於", "About", "Home")</li>
+                    <li>@Html.ActionLink("連絡方式", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

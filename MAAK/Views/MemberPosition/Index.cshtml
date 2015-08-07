@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MAAK.Models.PositionRecord>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PositionRecord_Startdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PositionRecord_Enddate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingRecord.MeetingRecord_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.Member_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position.Position_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PositionRecord_Startdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PositionRecord_Enddate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingRecord.MeetingRecord_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.Member_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position.Position_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PositionRecord_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PositionRecord_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PositionRecord_ID })
+        </td>
+    </tr>
+}
+
+</table>

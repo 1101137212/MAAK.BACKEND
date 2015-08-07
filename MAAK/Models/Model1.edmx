@@ -1,0 +1,1198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MAAKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Artisticworks">
+          <Key>
+            <PropertyRef Name="Artisticworks_ID" />
+          </Key>
+          <Property Name="Artisticworks_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Artisticworks_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Artisticworks_Date" Type="date" />
+          <Property Name="Artisticworks_Picture" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AssociationEvent">
+          <Key>
+            <PropertyRef Name="AssociationEvent_ID" />
+          </Key>
+          <Property Name="AssociationEvent_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AssociationEvent_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AssociationEvent_Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AssociationEvent_Date" Type="date" Nullable="false" />
+          <Property Name="AssociationEvent_Picture" Type="nvarchar(max)" />
+          <Property Name="AssociationEvent_Modifier" Type="int" Nullable="false" />
+          <Property Name="AssociationEvent_Modificationdatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AssociationHistory">
+          <Key>
+            <PropertyRef Name="AssociationHistory_ID" />
+          </Key>
+          <Property Name="AssociationHistory_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AssociationHistory_Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AssociationHistory_Detail2" Type="nvarchar(max)" />
+          <Property Name="AssociationHistory_Detail3" Type="nvarchar(max)" />
+          <Property Name="AssociationHistory_Modifier" Type="int" Nullable="false" />
+          <Property Name="AssociationHistory_Modificationdatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AssociationRule">
+          <Key>
+            <PropertyRef Name="AssociationRule_ID" />
+          </Key>
+          <Property Name="AssociationRule_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AssociationRule_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AssociationRule_Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AssociationRule_Modifier" Type="int" Nullable="false" />
+          <Property Name="AssociationRule_Modificationdatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="Award_ID" />
+          </Key>
+          <Property Name="Award_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Award_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Award_Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Award_Picture" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AwardRecord">
+          <Key>
+            <PropertyRef Name="AwardRecord_ID" />
+          </Key>
+          <Property Name="AwardRecord_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AwardRecord_Date" Type="date" Nullable="false" />
+          <Property Name="Award_ID" Type="int" Nullable="false" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Exhibition">
+          <Key>
+            <PropertyRef Name="Exhibition_ID" />
+          </Key>
+          <Property Name="Exhibition_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Exhibition_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Exhibition_Startdatetime" Type="datetime" />
+          <Property Name="Exhibition_Enddatetime" Type="datetime" />
+          <Property Name="Exhibition_Place" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Exhibition_Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Exhibition_Picture" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Exhibition_Otherpeople" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ExhibitionRecord">
+          <Key>
+            <PropertyRef Name="ExhibitionRecord_ID" />
+          </Key>
+          <Property Name="ExhibitionRecord_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExhibitionRecord_State" Type="bit" Nullable="false" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+          <Property Name="Exhibition_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LatestNews">
+          <Key>
+            <PropertyRef Name="LatestNews_ID" />
+          </Key>
+          <Property Name="LatestNews_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LatestNews_Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LatestNews_Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LatestNews_State" Type="bit" Nullable="false" />
+          <Property Name="LatestNews_Startdatetime" Type="datetime" Nullable="false" />
+          <Property Name="LatestNews_Enddatetime" Type="datetime" Nullable="false" />
+          <Property Name="LatestNews_Place" Type="nvarchar" MaxLength="80" />
+          <Property Name="LatestNews_Organizer" Type="nvarchar" MaxLength="50" />
+          <Property Name="LatestNews_Organizertelephonearea" Type="char" MaxLength="6" />
+          <Property Name="LatestNews_Organizertelephone" Type="char" MaxLength="10" />
+          <Property Name="LatestNews_Organizertelephoneext" Type="char" MaxLength="6" />
+          <Property Name="LatestNews_Presscontacts" Type="nvarchar" MaxLength="50" />
+          <Property Name="LatestNews_Presscontactstelephonearea" Type="char" MaxLength="6" />
+          <Property Name="LatestNews_Presscontactstelephone" Type="char" MaxLength="10" />
+          <Property Name="LatestNews_Presscontactstelephoneext" Type="char" MaxLength="6" />
+          <Property Name="LatestNews_Presscontactsmobile" Type="char" MaxLength="10" />
+          <Property Name="LatestNews_Presscontactsemail" Type="varchar" MaxLength="50" />
+          <Property Name="LatestNews_Modifier" Type="int" Nullable="false" />
+          <Property Name="LatestNews_Modificationdatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MediaReports">
+          <Key>
+            <PropertyRef Name="MediaReports_ID" />
+          </Key>
+          <Property Name="MediaReports_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MediaReports_Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MediaReports_Date" Type="date" Nullable="false" />
+          <Property Name="MediaReports_Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MediaReports_Picture" Type="nvarchar(max)" />
+          <Property Name="MediaReports_Modifier" Type="int" Nullable="false" />
+          <Property Name="MediaReports_Modificationdatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MeetingRecord">
+          <Key>
+            <PropertyRef Name="MeetingRecord_ID" />
+          </Key>
+          <Property Name="MeetingRecord_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeetingRecord_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MeetingRecord_Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MeetingRecord_Date" Type="date" Nullable="false" />
+          <Property Name="MeetingRecord_Starttime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="MeetingRecord_Endtime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="MeetingRecord_Place" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="MeetingRecord_File" Type="nvarchar(max)" />
+          <Property Name="MeetingRecord_Modificationdatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="Member_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Member_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Member_Mobile" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Member_Addresszip" Type="char" MaxLength="5" />
+          <Property Name="Member_Address" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Member_Picture" Type="nvarchar(max)" />
+          <Property Name="Member_Email" Type="varchar" MaxLength="50" />
+          <Property Name="Member_Nowposition" Type="nvarchar(max)" />
+          <Property Name="Member_Account" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Member_Password" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Member_Education" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Member_Experience" Type="nvarchar(max)" />
+          <Property Name="Member_Adminname" Type="varchar" MaxLength="20" />
+          <Property Name="Member_Adminpasswd" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+          </Key>
+          <Property Name="Position_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Position_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Position_Competence" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="PositionRecord">
+          <Key>
+            <PropertyRef Name="PositionRecord_ID" />
+          </Key>
+          <Property Name="PositionRecord_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionRecord_Startdate" Type="date" Nullable="false" />
+          <Property Name="PositionRecord_Enddate" Type="date" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+          <Property Name="Position_ID" Type="int" Nullable="false" />
+          <Property Name="MeetingRecord_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResearchField">
+          <Key>
+            <PropertyRef Name="ResearchField_ID" />
+          </Key>
+          <Property Name="ResearchField_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResearchField_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResearchFieldRecord">
+          <Key>
+            <PropertyRef Name="ResearchFieldRecord_ID" />
+          </Key>
+          <Property Name="ResearchFieldRecord_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResearchFieldRecord_Date" Type="date" Nullable="false" />
+          <Property Name="Member_ID" Type="int" Nullable="false" />
+          <Property Name="ResearchField_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Artisticworks_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="Artisticworks" Type="Self.Artisticworks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="Artisticworks">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssociationEvent_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="AssociationEvent" Type="Self.AssociationEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="AssociationEvent">
+              <PropertyRef Name="AssociationEvent_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssociationHistory_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="AssociationHistory" Type="Self.AssociationHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="AssociationHistory">
+              <PropertyRef Name="AssociationHistory_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssociationRule_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="AssociationRule" Type="Self.AssociationRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="AssociationRule">
+              <PropertyRef Name="AssociationRule_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AwardRecord_Award">
+          <End Role="Award" Type="Self.Award" Multiplicity="1" />
+          <End Role="AwardRecord" Type="Self.AwardRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Award">
+              <PropertyRef Name="Award_ID" />
+            </Principal>
+            <Dependent Role="AwardRecord">
+              <PropertyRef Name="Award_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AwardRecord_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="AwardRecord" Type="Self.AwardRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="AwardRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExhibitionRecord_Exhibition">
+          <End Role="Exhibition" Type="Self.Exhibition" Multiplicity="1" />
+          <End Role="ExhibitionRecord" Type="Self.ExhibitionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exhibition">
+              <PropertyRef Name="Exhibition_ID" />
+            </Principal>
+            <Dependent Role="ExhibitionRecord">
+              <PropertyRef Name="Exhibition_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExhibitionRecord_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="ExhibitionRecord" Type="Self.ExhibitionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="ExhibitionRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LatestNews_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="LatestNews" Type="Self.LatestNews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="LatestNews">
+              <PropertyRef Name="LatestNews_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MediaReports_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="MediaReports" Type="Self.MediaReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="MediaReports">
+              <PropertyRef Name="MediaReports_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PositionRecord_MeetingRecord">
+          <End Role="MeetingRecord" Type="Self.MeetingRecord" Multiplicity="1" />
+          <End Role="PositionRecord" Type="Self.PositionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MeetingRecord">
+              <PropertyRef Name="MeetingRecord_ID" />
+            </Principal>
+            <Dependent Role="PositionRecord">
+              <PropertyRef Name="MeetingRecord_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PositionRecord_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="PositionRecord" Type="Self.PositionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="PositionRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PositionRecord_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="PositionRecord" Type="Self.PositionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="Position_ID" />
+            </Principal>
+            <Dependent Role="PositionRecord">
+              <PropertyRef Name="Position_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResearchFieldRecord_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="ResearchFieldRecord" Type="Self.ResearchFieldRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="ResearchFieldRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResearchFieldRecord_ResearchField">
+          <End Role="ResearchField" Type="Self.ResearchField" Multiplicity="1" />
+          <End Role="ResearchFieldRecord" Type="Self.ResearchFieldRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResearchField">
+              <PropertyRef Name="ResearchField_ID" />
+            </Principal>
+            <Dependent Role="ResearchFieldRecord">
+              <PropertyRef Name="ResearchField_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MAAKModelStoreContainer">
+          <EntitySet Name="Artisticworks" EntityType="Self.Artisticworks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssociationEvent" EntityType="Self.AssociationEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssociationHistory" EntityType="Self.AssociationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssociationRule" EntityType="Self.AssociationRule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AwardRecord" EntityType="Self.AwardRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exhibition" EntityType="Self.Exhibition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExhibitionRecord" EntityType="Self.ExhibitionRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LatestNews" EntityType="Self.LatestNews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MediaReports" EntityType="Self.MediaReports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MeetingRecord" EntityType="Self.MeetingRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PositionRecord" EntityType="Self.PositionRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResearchField" EntityType="Self.ResearchField" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResearchFieldRecord" EntityType="Self.ResearchFieldRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Artisticworks_Member" Association="Self.FK_Artisticworks_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Artisticworks" EntitySet="Artisticworks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssociationEvent_Member" Association="Self.FK_AssociationEvent_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="AssociationEvent" EntitySet="AssociationEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssociationHistory_Member" Association="Self.FK_AssociationHistory_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="AssociationHistory" EntitySet="AssociationHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssociationRule_Member" Association="Self.FK_AssociationRule_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="AssociationRule" EntitySet="AssociationRule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AwardRecord_Award" Association="Self.FK_AwardRecord_Award">
+            <End Role="Award" EntitySet="Award" />
+            <End Role="AwardRecord" EntitySet="AwardRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AwardRecord_Member" Association="Self.FK_AwardRecord_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="AwardRecord" EntitySet="AwardRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExhibitionRecord_Exhibition" Association="Self.FK_ExhibitionRecord_Exhibition">
+            <End Role="Exhibition" EntitySet="Exhibition" />
+            <End Role="ExhibitionRecord" EntitySet="ExhibitionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExhibitionRecord_Member" Association="Self.FK_ExhibitionRecord_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="ExhibitionRecord" EntitySet="ExhibitionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LatestNews_Member" Association="Self.FK_LatestNews_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="LatestNews" EntitySet="LatestNews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MediaReports_Member" Association="Self.FK_MediaReports_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="MediaReports" EntitySet="MediaReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PositionRecord_MeetingRecord" Association="Self.FK_PositionRecord_MeetingRecord">
+            <End Role="MeetingRecord" EntitySet="MeetingRecord" />
+            <End Role="PositionRecord" EntitySet="PositionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PositionRecord_Member" Association="Self.FK_PositionRecord_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="PositionRecord" EntitySet="PositionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PositionRecord_Position" Association="Self.FK_PositionRecord_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="PositionRecord" EntitySet="PositionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResearchFieldRecord_Member" Association="Self.FK_ResearchFieldRecord_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="ResearchFieldRecord" EntitySet="ResearchFieldRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResearchFieldRecord_ResearchField" Association="Self.FK_ResearchFieldRecord_ResearchField">
+            <End Role="ResearchField" EntitySet="ResearchField" />
+            <End Role="ResearchFieldRecord" EntitySet="ResearchFieldRecord" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MAAKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Artisticworks">
+          <Key>
+            <PropertyRef Name="Artisticworks_ID" />
+          </Key>
+          <Property Name="Artisticworks_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Artisticworks_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Artisticworks_Date" Type="DateTime" Precision="0" />
+          <Property Name="Artisticworks_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Artisticworks_Member" FromRole="Artisticworks" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="AssociationEvent">
+          <Key>
+            <PropertyRef Name="AssociationEvent_ID" />
+          </Key>
+          <Property Name="AssociationEvent_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssociationEvent_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssociationEvent_Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssociationEvent_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AssociationEvent_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AssociationEvent_Modifier" Type="Int32" Nullable="false" />
+          <Property Name="AssociationEvent_Modificationdatetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_AssociationEvent_Member" FromRole="AssociationEvent" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="AssociationHistory">
+          <Key>
+            <PropertyRef Name="AssociationHistory_ID" />
+          </Key>
+          <Property Name="AssociationHistory_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssociationHistory_Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssociationHistory_Detail2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AssociationHistory_Detail3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AssociationHistory_Modifier" Type="Int32" Nullable="false" />
+          <Property Name="AssociationHistory_Modificationdatetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_AssociationHistory_Member" FromRole="AssociationHistory" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="AssociationRule">
+          <Key>
+            <PropertyRef Name="AssociationRule_ID" />
+          </Key>
+          <Property Name="AssociationRule_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssociationRule_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssociationRule_Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssociationRule_Modifier" Type="Int32" Nullable="false" />
+          <Property Name="AssociationRule_Modificationdatetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_AssociationRule_Member" FromRole="AssociationRule" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="Award_ID" />
+          </Key>
+          <Property Name="Award_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Award_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Award_Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Award_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AwardRecord" Relationship="Self.FK_AwardRecord_Award" FromRole="Award" ToRole="AwardRecord" />
+        </EntityType>
+        <EntityType Name="AwardRecord">
+          <Key>
+            <PropertyRef Name="AwardRecord_ID" />
+          </Key>
+          <Property Name="AwardRecord_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AwardRecord_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Award_ID" Type="Int32" Nullable="false" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Award" Relationship="Self.FK_AwardRecord_Award" FromRole="AwardRecord" ToRole="Award" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_AwardRecord_Member" FromRole="AwardRecord" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="Exhibition">
+          <Key>
+            <PropertyRef Name="Exhibition_ID" />
+          </Key>
+          <Property Name="Exhibition_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Exhibition_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Exhibition_Startdatetime" Type="DateTime" Precision="3" />
+          <Property Name="Exhibition_Enddatetime" Type="DateTime" Precision="3" />
+          <Property Name="Exhibition_Place" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Exhibition_Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Exhibition_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Exhibition_Otherpeople" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ExhibitionRecord" Relationship="Self.FK_ExhibitionRecord_Exhibition" FromRole="Exhibition" ToRole="ExhibitionRecord" />
+        </EntityType>
+        <EntityType Name="ExhibitionRecord">
+          <Key>
+            <PropertyRef Name="ExhibitionRecord_ID" />
+          </Key>
+          <Property Name="ExhibitionRecord_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExhibitionRecord_State" Type="Boolean" Nullable="false" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <Property Name="Exhibition_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Exhibition" Relationship="Self.FK_ExhibitionRecord_Exhibition" FromRole="ExhibitionRecord" ToRole="Exhibition" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_ExhibitionRecord_Member" FromRole="ExhibitionRecord" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="LatestNews">
+          <Key>
+            <PropertyRef Name="LatestNews_ID" />
+          </Key>
+          <Property Name="LatestNews_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LatestNews_Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LatestNews_Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LatestNews_State" Type="Boolean" Nullable="false" />
+          <Property Name="LatestNews_Startdatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LatestNews_Enddatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LatestNews_Place" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="LatestNews_Organizer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LatestNews_Organizertelephonearea" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="LatestNews_Organizertelephone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="LatestNews_Organizertelephoneext" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="LatestNews_Presscontacts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LatestNews_Presscontactstelephonearea" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="LatestNews_Presscontactstelephone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="LatestNews_Presscontactstelephoneext" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="LatestNews_Presscontactsmobile" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="LatestNews_Presscontactsemail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LatestNews_Modifier" Type="Int32" Nullable="false" />
+          <Property Name="LatestNews_Modificationdatetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_LatestNews_Member" FromRole="LatestNews" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="MediaReports">
+          <Key>
+            <PropertyRef Name="MediaReports_ID" />
+          </Key>
+          <Property Name="MediaReports_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MediaReports_Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MediaReports_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MediaReports_Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MediaReports_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MediaReports_Modifier" Type="Int32" Nullable="false" />
+          <Property Name="MediaReports_Modificationdatetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_MediaReports_Member" FromRole="MediaReports" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="MeetingRecord">
+          <Key>
+            <PropertyRef Name="MeetingRecord_ID" />
+          </Key>
+          <Property Name="MeetingRecord_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MeetingRecord_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MeetingRecord_Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MeetingRecord_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MeetingRecord_Starttime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="MeetingRecord_Endtime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="MeetingRecord_Place" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MeetingRecord_File" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MeetingRecord_Modificationdatetime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PositionRecord" Relationship="Self.FK_PositionRecord_MeetingRecord" FromRole="MeetingRecord" ToRole="PositionRecord" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="Member_ID" />
+          </Key>
+          <Property Name="Member_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Member_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Member_Mobile" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Member_Addresszip" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Member_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Member_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Member_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Member_Nowposition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Member_Account" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Member_Password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Member_Education" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Member_Experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Member_Adminname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Member_Adminpasswd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Artisticworks" Relationship="Self.FK_Artisticworks_Member" FromRole="Member" ToRole="Artisticworks" />
+          <NavigationProperty Name="AssociationEvent" Relationship="Self.FK_AssociationEvent_Member" FromRole="Member" ToRole="AssociationEvent" />
+          <NavigationProperty Name="AssociationHistory" Relationship="Self.FK_AssociationHistory_Member" FromRole="Member" ToRole="AssociationHistory" />
+          <NavigationProperty Name="AssociationRule" Relationship="Self.FK_AssociationRule_Member" FromRole="Member" ToRole="AssociationRule" />
+          <NavigationProperty Name="AwardRecord" Relationship="Self.FK_AwardRecord_Member" FromRole="Member" ToRole="AwardRecord" />
+          <NavigationProperty Name="ExhibitionRecord" Relationship="Self.FK_ExhibitionRecord_Member" FromRole="Member" ToRole="ExhibitionRecord" />
+          <NavigationProperty Name="LatestNews" Relationship="Self.FK_LatestNews_Member" FromRole="Member" ToRole="LatestNews" />
+          <NavigationProperty Name="MediaReports" Relationship="Self.FK_MediaReports_Member" FromRole="Member" ToRole="MediaReports" />
+          <NavigationProperty Name="PositionRecord" Relationship="Self.FK_PositionRecord_Member" FromRole="Member" ToRole="PositionRecord" />
+          <NavigationProperty Name="ResearchFieldRecord" Relationship="Self.FK_ResearchFieldRecord_Member" FromRole="Member" ToRole="ResearchFieldRecord" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+          </Key>
+          <Property Name="Position_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Position_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Position_Competence" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="PositionRecord" Relationship="Self.FK_PositionRecord_Position" FromRole="Position" ToRole="PositionRecord" />
+        </EntityType>
+        <EntityType Name="PositionRecord">
+          <Key>
+            <PropertyRef Name="PositionRecord_ID" />
+          </Key>
+          <Property Name="PositionRecord_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionRecord_Startdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PositionRecord_Enddate" Type="DateTime" Precision="0" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <Property Name="Position_ID" Type="Int32" Nullable="false" />
+          <Property Name="MeetingRecord_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MeetingRecord" Relationship="Self.FK_PositionRecord_MeetingRecord" FromRole="PositionRecord" ToRole="MeetingRecord" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_PositionRecord_Member" FromRole="PositionRecord" ToRole="Member" />
+          <NavigationProperty Name="Position" Relationship="Self.FK_PositionRecord_Position" FromRole="PositionRecord" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="ResearchField">
+          <Key>
+            <PropertyRef Name="ResearchField_ID" />
+          </Key>
+          <Property Name="ResearchField_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResearchField_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ResearchFieldRecord" Relationship="Self.FK_ResearchFieldRecord_ResearchField" FromRole="ResearchField" ToRole="ResearchFieldRecord" />
+        </EntityType>
+        <EntityType Name="ResearchFieldRecord">
+          <Key>
+            <PropertyRef Name="ResearchFieldRecord_ID" />
+          </Key>
+          <Property Name="ResearchFieldRecord_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResearchFieldRecord_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Member_ID" Type="Int32" Nullable="false" />
+          <Property Name="ResearchField_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_ResearchFieldRecord_Member" FromRole="ResearchFieldRecord" ToRole="Member" />
+          <NavigationProperty Name="ResearchField" Relationship="Self.FK_ResearchFieldRecord_ResearchField" FromRole="ResearchFieldRecord" ToRole="ResearchField" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Artisticworks_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="Artisticworks" Type="Self.Artisticworks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="Artisticworks">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssociationEvent_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="AssociationEvent" Type="Self.AssociationEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="AssociationEvent">
+              <PropertyRef Name="AssociationEvent_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssociationHistory_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="AssociationHistory" Type="Self.AssociationHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="AssociationHistory">
+              <PropertyRef Name="AssociationHistory_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssociationRule_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="AssociationRule" Type="Self.AssociationRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="AssociationRule">
+              <PropertyRef Name="AssociationRule_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AwardRecord_Award">
+          <End Role="Award" Type="Self.Award" Multiplicity="1" />
+          <End Role="AwardRecord" Type="Self.AwardRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Award">
+              <PropertyRef Name="Award_ID" />
+            </Principal>
+            <Dependent Role="AwardRecord">
+              <PropertyRef Name="Award_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AwardRecord_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="AwardRecord" Type="Self.AwardRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="AwardRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExhibitionRecord_Exhibition">
+          <End Role="Exhibition" Type="Self.Exhibition" Multiplicity="1" />
+          <End Role="ExhibitionRecord" Type="Self.ExhibitionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exhibition">
+              <PropertyRef Name="Exhibition_ID" />
+            </Principal>
+            <Dependent Role="ExhibitionRecord">
+              <PropertyRef Name="Exhibition_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExhibitionRecord_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="ExhibitionRecord" Type="Self.ExhibitionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="ExhibitionRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LatestNews_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="LatestNews" Type="Self.LatestNews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="LatestNews">
+              <PropertyRef Name="LatestNews_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MediaReports_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="MediaReports" Type="Self.MediaReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="MediaReports">
+              <PropertyRef Name="MediaReports_Modifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PositionRecord_MeetingRecord">
+          <End Role="MeetingRecord" Type="Self.MeetingRecord" Multiplicity="1" />
+          <End Role="PositionRecord" Type="Self.PositionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MeetingRecord">
+              <PropertyRef Name="MeetingRecord_ID" />
+            </Principal>
+            <Dependent Role="PositionRecord">
+              <PropertyRef Name="MeetingRecord_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PositionRecord_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="PositionRecord" Type="Self.PositionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="PositionRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResearchFieldRecord_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="ResearchFieldRecord" Type="Self.ResearchFieldRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="Member_ID" />
+            </Principal>
+            <Dependent Role="ResearchFieldRecord">
+              <PropertyRef Name="Member_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PositionRecord_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="PositionRecord" Type="Self.PositionRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="Position_ID" />
+            </Principal>
+            <Dependent Role="PositionRecord">
+              <PropertyRef Name="Position_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResearchFieldRecord_ResearchField">
+          <End Role="ResearchField" Type="Self.ResearchField" Multiplicity="1" />
+          <End Role="ResearchFieldRecord" Type="Self.ResearchFieldRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResearchField">
+              <PropertyRef Name="ResearchField_ID" />
+            </Principal>
+            <Dependent Role="ResearchFieldRecord">
+              <PropertyRef Name="ResearchField_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MAAKEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Artisticworks" EntityType="Self.Artisticworks" />
+          <EntitySet Name="AssociationEvent" EntityType="Self.AssociationEvent" />
+          <EntitySet Name="AssociationHistory" EntityType="Self.AssociationHistory" />
+          <EntitySet Name="AssociationRule" EntityType="Self.AssociationRule" />
+          <EntitySet Name="Award" EntityType="Self.Award" />
+          <EntitySet Name="AwardRecord" EntityType="Self.AwardRecord" />
+          <EntitySet Name="Exhibition" EntityType="Self.Exhibition" />
+          <EntitySet Name="ExhibitionRecord" EntityType="Self.ExhibitionRecord" />
+          <EntitySet Name="LatestNews" EntityType="Self.LatestNews" />
+          <EntitySet Name="MediaReports" EntityType="Self.MediaReports" />
+          <EntitySet Name="MeetingRecord" EntityType="Self.MeetingRecord" />
+          <EntitySet Name="Member" EntityType="Self.Member" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="PositionRecord" EntityType="Self.PositionRecord" />
+          <EntitySet Name="ResearchField" EntityType="Self.ResearchField" />
+          <EntitySet Name="ResearchFieldRecord" EntityType="Self.ResearchFieldRecord" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Artisticworks_Member" Association="Self.FK_Artisticworks_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Artisticworks" EntitySet="Artisticworks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssociationEvent_Member" Association="Self.FK_AssociationEvent_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="AssociationEvent" EntitySet="AssociationEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssociationHistory_Member" Association="Self.FK_AssociationHistory_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="AssociationHistory" EntitySet="AssociationHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssociationRule_Member" Association="Self.FK_AssociationRule_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="AssociationRule" EntitySet="AssociationRule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AwardRecord_Award" Association="Self.FK_AwardRecord_Award">
+            <End Role="Award" EntitySet="Award" />
+            <End Role="AwardRecord" EntitySet="AwardRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AwardRecord_Member" Association="Self.FK_AwardRecord_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="AwardRecord" EntitySet="AwardRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExhibitionRecord_Exhibition" Association="Self.FK_ExhibitionRecord_Exhibition">
+            <End Role="Exhibition" EntitySet="Exhibition" />
+            <End Role="ExhibitionRecord" EntitySet="ExhibitionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExhibitionRecord_Member" Association="Self.FK_ExhibitionRecord_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="ExhibitionRecord" EntitySet="ExhibitionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LatestNews_Member" Association="Self.FK_LatestNews_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="LatestNews" EntitySet="LatestNews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MediaReports_Member" Association="Self.FK_MediaReports_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="MediaReports" EntitySet="MediaReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PositionRecord_MeetingRecord" Association="Self.FK_PositionRecord_MeetingRecord">
+            <End Role="MeetingRecord" EntitySet="MeetingRecord" />
+            <End Role="PositionRecord" EntitySet="PositionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PositionRecord_Member" Association="Self.FK_PositionRecord_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="PositionRecord" EntitySet="PositionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResearchFieldRecord_Member" Association="Self.FK_ResearchFieldRecord_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="ResearchFieldRecord" EntitySet="ResearchFieldRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PositionRecord_Position" Association="Self.FK_PositionRecord_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="PositionRecord" EntitySet="PositionRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResearchFieldRecord_ResearchField" Association="Self.FK_ResearchFieldRecord_ResearchField">
+            <End Role="ResearchField" EntitySet="ResearchField" />
+            <End Role="ResearchFieldRecord" EntitySet="ResearchFieldRecord" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MAAKModelStoreContainer" CdmEntityContainer="MAAKEntities">
+          <EntitySetMapping Name="Artisticworks">
+            <EntityTypeMapping TypeName="MAAKModel.Artisticworks">
+              <MappingFragment StoreEntitySet="Artisticworks">
+                <ScalarProperty Name="Artisticworks_ID" ColumnName="Artisticworks_ID" />
+                <ScalarProperty Name="Artisticworks_Name" ColumnName="Artisticworks_Name" />
+                <ScalarProperty Name="Artisticworks_Date" ColumnName="Artisticworks_Date" />
+                <ScalarProperty Name="Artisticworks_Picture" ColumnName="Artisticworks_Picture" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssociationEvent">
+            <EntityTypeMapping TypeName="MAAKModel.AssociationEvent">
+              <MappingFragment StoreEntitySet="AssociationEvent">
+                <ScalarProperty Name="AssociationEvent_ID" ColumnName="AssociationEvent_ID" />
+                <ScalarProperty Name="AssociationEvent_Title" ColumnName="AssociationEvent_Title" />
+                <ScalarProperty Name="AssociationEvent_Detail" ColumnName="AssociationEvent_Detail" />
+                <ScalarProperty Name="AssociationEvent_Date" ColumnName="AssociationEvent_Date" />
+                <ScalarProperty Name="AssociationEvent_Picture" ColumnName="AssociationEvent_Picture" />
+                <ScalarProperty Name="AssociationEvent_Modifier" ColumnName="AssociationEvent_Modifier" />
+                <ScalarProperty Name="AssociationEvent_Modificationdatetime" ColumnName="AssociationEvent_Modificationdatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssociationHistory">
+            <EntityTypeMapping TypeName="MAAKModel.AssociationHistory">
+              <MappingFragment StoreEntitySet="AssociationHistory">
+                <ScalarProperty Name="AssociationHistory_ID" ColumnName="AssociationHistory_ID" />
+                <ScalarProperty Name="AssociationHistory_Detail" ColumnName="AssociationHistory_Detail" />
+                <ScalarProperty Name="AssociationHistory_Detail2" ColumnName="AssociationHistory_Detail2" />
+                <ScalarProperty Name="AssociationHistory_Detail3" ColumnName="AssociationHistory_Detail3" />
+                <ScalarProperty Name="AssociationHistory_Modifier" ColumnName="AssociationHistory_Modifier" />
+                <ScalarProperty Name="AssociationHistory_Modificationdatetime" ColumnName="AssociationHistory_Modificationdatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssociationRule">
+            <EntityTypeMapping TypeName="MAAKModel.AssociationRule">
+              <MappingFragment StoreEntitySet="AssociationRule">
+                <ScalarProperty Name="AssociationRule_ID" ColumnName="AssociationRule_ID" />
+                <ScalarProperty Name="AssociationRule_Title" ColumnName="AssociationRule_Title" />
+                <ScalarProperty Name="AssociationRule_Detail" ColumnName="AssociationRule_Detail" />
+                <ScalarProperty Name="AssociationRule_Modifier" ColumnName="AssociationRule_Modifier" />
+                <ScalarProperty Name="AssociationRule_Modificationdatetime" ColumnName="AssociationRule_Modificationdatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Award">
+            <EntityTypeMapping TypeName="MAAKModel.Award">
+              <MappingFragment StoreEntitySet="Award">
+                <ScalarProperty Name="Award_ID" ColumnName="Award_ID" />
+                <ScalarProperty Name="Award_Title" ColumnName="Award_Title" />
+                <ScalarProperty Name="Award_Detail" ColumnName="Award_Detail" />
+                <ScalarProperty Name="Award_Picture" ColumnName="Award_Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AwardRecord">
+            <EntityTypeMapping TypeName="MAAKModel.AwardRecord">
+              <MappingFragment StoreEntitySet="AwardRecord">
+                <ScalarProperty Name="AwardRecord_ID" ColumnName="AwardRecord_ID" />
+                <ScalarProperty Name="AwardRecord_Date" ColumnName="AwardRecord_Date" />
+                <ScalarProperty Name="Award_ID" ColumnName="Award_ID" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exhibition">
+            <EntityTypeMapping TypeName="MAAKModel.Exhibition">
+              <MappingFragment StoreEntitySet="Exhibition">
+                <ScalarProperty Name="Exhibition_ID" ColumnName="Exhibition_ID" />
+                <ScalarProperty Name="Exhibition_Title" ColumnName="Exhibition_Title" />
+                <ScalarProperty Name="Exhibition_Startdatetime" ColumnName="Exhibition_Startdatetime" />
+                <ScalarProperty Name="Exhibition_Enddatetime" ColumnName="Exhibition_Enddatetime" />
+                <ScalarProperty Name="Exhibition_Place" ColumnName="Exhibition_Place" />
+                <ScalarProperty Name="Exhibition_Detail" ColumnName="Exhibition_Detail" />
+                <ScalarProperty Name="Exhibition_Picture" ColumnName="Exhibition_Picture" />
+                <ScalarProperty Name="Exhibition_Otherpeople" ColumnName="Exhibition_Otherpeople" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExhibitionRecord">
+            <EntityTypeMapping TypeName="MAAKModel.ExhibitionRecord">
+              <MappingFragment StoreEntitySet="ExhibitionRecord">
+                <ScalarProperty Name="ExhibitionRecord_ID" ColumnName="ExhibitionRecord_ID" />
+                <ScalarProperty Name="ExhibitionRecord_State" ColumnName="ExhibitionRecord_State" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Exhibition_ID" ColumnName="Exhibition_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LatestNews">
+            <EntityTypeMapping TypeName="MAAKModel.LatestNews">
+              <MappingFragment StoreEntitySet="LatestNews">
+                <ScalarProperty Name="LatestNews_ID" ColumnName="LatestNews_ID" />
+                <ScalarProperty Name="LatestNews_Title" ColumnName="LatestNews_Title" />
+                <ScalarProperty Name="LatestNews_Detail" ColumnName="LatestNews_Detail" />
+                <ScalarProperty Name="LatestNews_State" ColumnName="LatestNews_State" />
+                <ScalarProperty Name="LatestNews_Startdatetime" ColumnName="LatestNews_Startdatetime" />
+                <ScalarProperty Name="LatestNews_Enddatetime" ColumnName="LatestNews_Enddatetime" />
+                <ScalarProperty Name="LatestNews_Place" ColumnName="LatestNews_Place" />
+                <ScalarProperty Name="LatestNews_Organizer" ColumnName="LatestNews_Organizer" />
+                <ScalarProperty Name="LatestNews_Organizertelephonearea" ColumnName="LatestNews_Organizertelephonearea" />
+                <ScalarProperty Name="LatestNews_Organizertelephone" ColumnName="LatestNews_Organizertelephone" />
+                <ScalarProperty Name="LatestNews_Organizertelephoneext" ColumnName="LatestNews_Organizertelephoneext" />
+                <ScalarProperty Name="LatestNews_Presscontacts" ColumnName="LatestNews_Presscontacts" />
+                <ScalarProperty Name="LatestNews_Presscontactstelephonearea" ColumnName="LatestNews_Presscontactstelephonearea" />
+                <ScalarProperty Name="LatestNews_Presscontactstelephone" ColumnName="LatestNews_Presscontactstelephone" />
+                <ScalarProperty Name="LatestNews_Presscontactstelephoneext" ColumnName="LatestNews_Presscontactstelephoneext" />
+                <ScalarProperty Name="LatestNews_Presscontactsmobile" ColumnName="LatestNews_Presscontactsmobile" />
+                <ScalarProperty Name="LatestNews_Presscontactsemail" ColumnName="LatestNews_Presscontactsemail" />
+                <ScalarProperty Name="LatestNews_Modifier" ColumnName="LatestNews_Modifier" />
+                <ScalarProperty Name="LatestNews_Modificationdatetime" ColumnName="LatestNews_Modificationdatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MediaReports">
+            <EntityTypeMapping TypeName="MAAKModel.MediaReports">
+              <MappingFragment StoreEntitySet="MediaReports">
+                <ScalarProperty Name="MediaReports_ID" ColumnName="MediaReports_ID" />
+                <ScalarProperty Name="MediaReports_Title" ColumnName="MediaReports_Title" />
+                <ScalarProperty Name="MediaReports_Date" ColumnName="MediaReports_Date" />
+                <ScalarProperty Name="MediaReports_Detail" ColumnName="MediaReports_Detail" />
+                <ScalarProperty Name="MediaReports_Picture" ColumnName="MediaReports_Picture" />
+                <ScalarProperty Name="MediaReports_Modifier" ColumnName="MediaReports_Modifier" />
+                <ScalarProperty Name="MediaReports_Modificationdatetime" ColumnName="MediaReports_Modificationdatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeetingRecord">
+            <EntityTypeMapping TypeName="MAAKModel.MeetingRecord">
+              <MappingFragment StoreEntitySet="MeetingRecord">
+                <ScalarProperty Name="MeetingRecord_ID" ColumnName="MeetingRecord_ID" />
+                <ScalarProperty Name="MeetingRecord_Title" ColumnName="MeetingRecord_Title" />
+                <ScalarProperty Name="MeetingRecord_Detail" ColumnName="MeetingRecord_Detail" />
+                <ScalarProperty Name="MeetingRecord_Date" ColumnName="MeetingRecord_Date" />
+                <ScalarProperty Name="MeetingRecord_Starttime" ColumnName="MeetingRecord_Starttime" />
+                <ScalarProperty Name="MeetingRecord_Endtime" ColumnName="MeetingRecord_Endtime" />
+                <ScalarProperty Name="MeetingRecord_Place" ColumnName="MeetingRecord_Place" />
+                <ScalarProperty Name="MeetingRecord_File" ColumnName="MeetingRecord_File" />
+                <ScalarProperty Name="MeetingRecord_Modificationdatetime" ColumnName="MeetingRecord_Modificationdatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Member">
+            <EntityTypeMapping TypeName="MAAKModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+                <ScalarProperty Name="Member_Mobile" ColumnName="Member_Mobile" />
+                <ScalarProperty Name="Member_Addresszip" ColumnName="Member_Addresszip" />
+                <ScalarProperty Name="Member_Address" ColumnName="Member_Address" />
+                <ScalarProperty Name="Member_Picture" ColumnName="Member_Picture" />
+                <ScalarProperty Name="Member_Email" ColumnName="Member_Email" />
+                <ScalarProperty Name="Member_Nowposition" ColumnName="Member_Nowposition" />
+                <ScalarProperty Name="Member_Account" ColumnName="Member_Account" />
+                <ScalarProperty Name="Member_Password" ColumnName="Member_Password" />
+                <ScalarProperty Name="Member_Education" ColumnName="Member_Education" />
+                <ScalarProperty Name="Member_Experience" ColumnName="Member_Experience" />
+                <ScalarProperty Name="Member_Adminname" ColumnName="Member_Adminname" />
+                <ScalarProperty Name="Member_Adminpasswd" ColumnName="Member_Adminpasswd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="MAAKModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+                <ScalarProperty Name="Position_Name" ColumnName="Position_Name" />
+                <ScalarProperty Name="Position_Competence" ColumnName="Position_Competence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PositionRecord">
+            <EntityTypeMapping TypeName="MAAKModel.PositionRecord">
+              <MappingFragment StoreEntitySet="PositionRecord">
+                <ScalarProperty Name="PositionRecord_ID" ColumnName="PositionRecord_ID" />
+                <ScalarProperty Name="PositionRecord_Startdate" ColumnName="PositionRecord_Startdate" />
+                <ScalarProperty Name="PositionRecord_Enddate" ColumnName="PositionRecord_Enddate" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+                <ScalarProperty Name="MeetingRecord_ID" ColumnName="MeetingRecord_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResearchField">
+            <EntityTypeMapping TypeName="MAAKModel.ResearchField">
+              <MappingFragment StoreEntitySet="ResearchField">
+                <ScalarProperty Name="ResearchField_ID" ColumnName="ResearchField_ID" />
+                <ScalarProperty Name="ResearchField_Name" ColumnName="ResearchField_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResearchFieldRecord">
+            <EntityTypeMapping TypeName="MAAKModel.ResearchFieldRecord">
+              <MappingFragment StoreEntitySet="ResearchFieldRecord">
+                <ScalarProperty Name="ResearchFieldRecord_ID" ColumnName="ResearchFieldRecord_ID" />
+                <ScalarProperty Name="ResearchFieldRecord_Date" ColumnName="ResearchFieldRecord_Date" />
+                <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+                <ScalarProperty Name="ResearchField_ID" ColumnName="ResearchField_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MAAKModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

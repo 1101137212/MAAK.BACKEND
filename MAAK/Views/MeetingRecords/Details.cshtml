@@ -1,0 +1,50 @@
+﻿@model MAAK.Models.MeetingRecord
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MeetingRecord</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingRecord_Title)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingRecord_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingRecord_File)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingRecord_File)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Modificationdatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeetingRecord_Modificationdatetime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MeetingRecord_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

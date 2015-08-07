@@ -1,0 +1,135 @@
+﻿@model IEnumerable<MAAK.Models.LatestNews>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Detail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Startdatetime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Enddatetime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Organizer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Organizertelephonearea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Organizertelephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Organizertelephoneext)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Presscontacts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Presscontactstelephonearea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Presscontactstelephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Presscontactstelephoneext)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Presscontactsmobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Presscontactsemail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LatestNews_Modificationdatetime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.Member_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Detail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Startdatetime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Enddatetime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Place)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Organizer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Organizertelephonearea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Organizertelephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Organizertelephoneext)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Presscontacts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Presscontactstelephonearea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Presscontactstelephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Presscontactstelephoneext)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Presscontactsmobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Presscontactsemail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LatestNews_Modificationdatetime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.Member_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LatestNews_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LatestNews_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LatestNews_ID })
+        </td>
+    </tr>
+}
+
+</table>

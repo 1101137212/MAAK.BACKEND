@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MAAK.Models.MeetingRecord>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Detail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Starttime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Endtime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingRecord_Modificationdatetime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingRecord_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingRecord_Detail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingRecord_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingRecord_Starttime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingRecord_Endtime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingRecord_Place)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingRecord_Modificationdatetime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MeetingRecord_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MeetingRecord_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MeetingRecord_ID })
+        </td>
+    </tr>
+}
+
+</table>

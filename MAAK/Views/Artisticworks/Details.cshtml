@@ -1,0 +1,50 @@
+﻿@model MAAK.Models.Artisticworks
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Artisticworks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Artisticworks_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artisticworks_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Artisticworks_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artisticworks_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Artisticworks_Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artisticworks_Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member.Member_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member.Member_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Artisticworks_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

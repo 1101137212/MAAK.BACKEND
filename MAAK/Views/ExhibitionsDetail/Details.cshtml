@@ -1,0 +1,74 @@
+﻿@model MAAK.Models.Exhibition
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exhibition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Startdatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Startdatetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Enddatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Enddatetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Otherpeople)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Otherpeople)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Exhibition_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

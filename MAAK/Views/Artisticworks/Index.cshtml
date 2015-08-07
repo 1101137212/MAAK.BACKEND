@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MAAK.Models.Artisticworks>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Artisticworks_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artisticworks_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artisticworks_Picture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.Member_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artisticworks_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artisticworks_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artisticworks_Picture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.Member_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Artisticworks_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Artisticworks_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Artisticworks_ID })
+        </td>
+    </tr>
+}
+
+</table>

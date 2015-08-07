@@ -1,0 +1,80 @@
+﻿@model MAAK.Models.Exhibition
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Exhibition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Startdatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Startdatetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Enddatetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Enddatetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Picture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exhibition_Otherpeople)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exhibition_Otherpeople)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
